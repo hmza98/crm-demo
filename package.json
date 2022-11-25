@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "server": "json-server --watch db.json --port 5000"
   },
   "repository": {
     "type": "git",
@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/hmza98/crm-demo/issues"
   },
-  "homepage": "https://github.com/hmza98/crm-demo#readme"
+  "homepage": "https://github.com/hmza98/crm-demo#readme",
+  "dependencies": {
+    "json-server": "^0.17.1"
+  }
 }
