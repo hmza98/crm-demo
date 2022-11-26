@@ -1,24 +1,14 @@
-import logo from './logo.svg';
-import './App.css';
+import { Admin, Resource, EditGuesser } from 'react-admin';
+import simpleRestProvider from 'ra-data-simple-rest';
+import { EmployeeList } from './EmployeeList';
+import authProvider from './authProvider';
+import { PostEdit } from './EmployeeEdit';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Admin authProvider={authProvider} dataProvider={simpleRestProvider('http://localhost:3000')}>
+      <Resource name="employee" list={EmployeeList} edit={PostEdit} />
+    </Admin>
   );
 }
 
